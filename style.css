@@ -41,12 +41,27 @@ p {
     color: #94a3b8;
 }
 
-/* Klasa dla złączonych w linie danych użytkownika */
+/* Klasa dla złączonych w linie danych użytkownika (przywrócone efekty CLI) */
 .user-metadata-line {
     margin-bottom: 25px;
-    line-height: 1.7;
+    line-height: 1.8;      /* Zwiększony odstęp w pionie */
+    color: #cbd5e1;        /* Kolor dla wartości (daty, miasta) */
+    font-weight: bold;     /* Surowy, gruby font terminalowy */
 }
 
+/* Efekty i kolory dla linku e-mail wewnątrz metadanych */
+.user-metadata-line a {
+    color: #cbd5e1;
+    text-decoration: none; /* Ukrycie standardowego podkreślenia */
+    border-bottom: 1px dashed #64748b; /* Terminalowe, przerywane podkreślenie */
+}
+
+.user-metadata-line a:hover {
+    color: #ffffff;
+    border-bottom-style: solid; /* Pełna linia po najechaniu myszką */
+}
+
+/* Jasny cyjan dla kluczowych słów */
 .cyan-accent {
     color: #22d3ee;
 }
@@ -126,10 +141,10 @@ footer {
 @media print {
     @page {
         size: A4;
-        margin: 10mm 12mm; /* Marginesy optymalne dla 1 strony A4 */
+        margin: 10mm 12mm; /* Marginesy dopasowane do 1 strony A4 */
     }
 
-    /* Ukrywamy przycisk na wydruku PDF */
+    /* Ukrywamy przycisk interaktywny na wydruku PDF */
     #rodo-btn {
         display: none !important;
     }
