@@ -28,7 +28,7 @@ body {
     color: #ffffff;
 }
 
-/* Sekcje i nagłówki */
+/* Nagłówki sekcji */
 h2 {
     color: #22d3ee;
     font-size: 1.1rem;
@@ -41,21 +41,7 @@ p {
     color: #94a3b8;
 }
 
-/* Żółty komunikat informacyjny */
-#disclaimer {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px dashed #eab308;
-    color: #facc15;
-    font-size: 0.9rem;
-}
-
-#disclaimer a {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-/* Nowa klasa dla złączonych w linie danych użytkownika */
+/* Klasa dla złączonych w linie danych użytkownika */
 .user-metadata-line {
     margin-bottom: 25px;
     line-height: 1.7;
@@ -140,20 +126,20 @@ footer {
 @media print {
     @page {
         size: A4;
-        margin: 10mm 12mm; /* Marginesy dopasowane, aby całość zmieściła się na 1 stronie */
+        margin: 10mm 12mm; /* Marginesy optymalne dla 1 strony A4 */
     }
 
-    /* Ukrywamy przycisk interaktywny na wydruku */
+    /* Ukrywamy przycisk na wydruku PDF */
     #rodo-btn {
         display: none !important;
     }
 
-    /* Wymuszamy, aby tekst RODO był zawsze widoczny w wygenerowanym PDF */
+    /* Wymuszamy pokazywanie rozwiniętej klauzuli RODO na dokumencie */
     #rodo-text.hidden {
         display: block !important;
     }
 
-    /* Optymalizacja odstępów pod kątem zmieszczenia całości na jednej karcie A4 */
+    /* Kompaktowe odstępy, aby zapobiec uciekaniu tekstu na drugą stronę */
     .terminal-header { margin-bottom: 15px; }
     .user-metadata-line { margin-bottom: 15px; }
     h2 { margin-top: 15px; margin-bottom: 8px; }
