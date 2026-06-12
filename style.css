@@ -141,29 +141,75 @@ footer {
 }
 
 /* ==========================================================================
-   REGUŁY DRUKOWANIA (Standardowy jasny arkusz, bez wymuszania Dark Mode)
+   REGUŁY DRUKOWANIA (Gwarancja dopasowania do dokładnie 1 strony A4)
    ========================================================================== */
 @media print {
     @page {
         size: A4;
-        margin: 10mm 12mm; /* Idealne marginesy pod 1 stronę A4 */
+        margin: 8mm 10mm; /* Bezpieczne, zredukowane marginesy zewnętrzne strony */
     }
 
-    /* Ukrywamy przycisk interaktywny na wydruku PDF */
+    body {
+        font-size: 9pt !important; /* Odchudzenie bazy czcionki na wydruku */
+        line-height: 1.4 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .terminal-header {
+        font-size: 10pt !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .user-metadata-line {
+        margin-bottom: 12px !important;
+    }
+
+    .metadata-row {
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
+    }
+
+    h2 {
+        font-size: 10pt !important;
+        margin-top: 12px !important;
+        margin-bottom: 6px !important;
+        page-break-after: avoid !important; /* Zakaz odrywania nagłówka od treści */
+    }
+
+    p {
+        margin-bottom: 8px !important;
+    }
+
+    .cli-table {
+        margin-bottom: 12px !important;
+    }
+
+    .cli-table td {
+        padding: 6px 8px !important; /* Zmniejszone marginesy komórek dla zwartości */
+        font-size: 8.5pt !important;
+    }
+
+    /* Ukrywamy przycisk na wydruku PDF */
     #rodo-btn {
         display: none !important;
     }
 
-    /* Wymuszamy pokazywanie rozwiniętej klauzuli RODO na dokumencie */
+    /* Wymuszamy automatyczne pokazanie rozwiniętej klauzuli RODO */
     #rodo-text.hidden {
         display: block !important;
     }
 
-    /* Kompaktowe odstępy, zapobiegające uciekaniu treści na drugą stronę */
-    .terminal-header { margin-bottom: 15px; }
-    .user-metadata-line { margin-bottom: 15px; }
-    h2 { margin-top: 15px; margin-bottom: 8px; }
-    .cli-table { margin-bottom: 15px; }
-    .cli-table td { padding: 8px; }
-    footer { margin-top: 20px; }
+    .rodo-content {
+        margin-top: 8px !important;
+        padding: 6px 10px !important;
+        font-size: 7.5pt !important;
+    }
+
+    footer {
+        margin-top: 15px !important;
+        padding-top: 8px !important;
+        font-size: 7.5pt !important;
+    }
 }
