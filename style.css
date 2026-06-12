@@ -41,27 +41,32 @@ p {
     color: #94a3b8;
 }
 
-/* Klasa dla złączonych w linie danych użytkownika (przywrócone efekty CLI) */
+/* Kontener główny dla danych użytkownika */
 .user-metadata-line {
     margin-bottom: 25px;
-    line-height: 1.8;      /* Zwiększony odstęp w pionie */
-    color: #cbd5e1;        /* Kolor dla wartości (daty, miasta) */
-    font-weight: bold;     /* Surowy, gruby font terminalowy */
+}
+
+/* Poszczególne wiersze danych (USER/BORN/CITY oraz EMAIL) */
+.metadata-row {
+    line-height: 1.8;      /* Równe, estetyczne odstępy pionowe */
+    color: #cbd5e1;        /* Kolor dla zwykłych wartości */
+    font-weight: bold;     /* Surowy, wyraźny font terminalowy */
+    font-size: 0.95rem;
 }
 
 /* Efekty i kolory dla linku e-mail wewnątrz metadanych */
-.user-metadata-line a {
+.metadata-row a {
     color: #cbd5e1;
     text-decoration: none; /* Ukrycie standardowego podkreślenia */
     border-bottom: 1px dashed #64748b; /* Terminalowe, przerywane podkreślenie */
 }
 
-.user-metadata-line a:hover {
+.metadata-row a:hover {
     color: #ffffff;
     border-bottom-style: solid; /* Pełna linia po najechaniu myszką */
 }
 
-/* Jasny cyjan dla kluczowych słów */
+/* Jasny cyjan dla kluczowych słów (etykiet terminala) */
 .cyan-accent {
     color: #22d3ee;
 }
@@ -103,62 +108,4 @@ button {
 }
 
 button:hover {
-    background-color: #22d3ee;
-    color: #0d0e11;
-}
-
-/* Klasy pomocnicze do skryptu JS */
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}
-
-/* Kontener z tekstem klauzuli RODO */
-.rodo-content {
-    margin-top: 15px;
-    padding: 12px;
-    border: 1px dashed #ef4444;
-    color: #f87171;
-    background-color: #141115;
-}
-
-/* Stopka strony */
-footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #475569;
-    border-top: 1px solid #1e293b;
-    padding-top: 15px;
-}
-
-/* ==========================================================================
-   REGUŁY DRUKOWANIA (Standardowy jasny arkusz, bez wymuszania Dark Mode)
-   ========================================================================== */
-@media print {
-    @page {
-        size: A4;
-        margin: 10mm 12mm; /* Marginesy dopasowane do 1 strony A4 */
-    }
-
-    /* Ukrywamy przycisk interaktywny na wydruku PDF */
-    #rodo-btn {
-        display: none !important;
-    }
-
-    /* Wymuszamy pokazywanie rozwiniętej klauzuli RODO na dokumencie */
-    #rodo-text.hidden {
-        display: block !important;
-    }
-
-    /* Kompaktowe odstępy, aby zapobiec uciekaniu tekstu na drugą stronę */
-    .terminal-header { margin-bottom: 15px; }
-    .user-metadata-line { margin-bottom: 15px; }
-    h2 { margin-top: 15px; margin-bottom: 8px; }
-    .cli-table { margin-bottom: 15px; }
-    .cli-table td { padding: 8px; }
-    footer { margin-top: 20px; }
-}
+    background
