@@ -108,4 +108,62 @@ button {
 }
 
 button:hover {
-    background
+    background-color: #22d3ee;
+    color: #0d0e11;
+}
+
+/* Klasy pomocnicze do skryptu JS */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Kontener z tekstem klauzuli RODO */
+.rodo-content {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px dashed #ef4444;
+    color: #f87171;
+    background-color: #141115;
+}
+
+/* Stopka strony */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #475569;
+    border-top: 1px solid #1e293b;
+    padding-top: 15px;
+}
+
+/* ==========================================================================
+   REGUŁY DRUKOWANIA (Standardowy jasny arkusz, bez wymuszania Dark Mode)
+   ========================================================================== */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm 12mm; /* Idealne marginesy pod 1 stronę A4 */
+    }
+
+    /* Ukrywamy przycisk interaktywny na wydruku PDF */
+    #rodo-btn {
+        display: none !important;
+    }
+
+    /* Wymuszamy pokazywanie rozwiniętej klauzuli RODO na dokumencie */
+    #rodo-text.hidden {
+        display: block !important;
+    }
+
+    /* Kompaktowe odstępy, zapobiegające uciekaniu treści na drugą stronę */
+    .terminal-header { margin-bottom: 15px; }
+    .user-metadata-line { margin-bottom: 15px; }
+    h2 { margin-top: 15px; margin-bottom: 8px; }
+    .cli-table { margin-bottom: 15px; }
+    .cli-table td { padding: 8px; }
+    footer { margin-top: 20px; }
+}
