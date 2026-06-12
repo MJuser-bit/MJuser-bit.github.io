@@ -1,9 +1,10 @@
-/* Stylizacja całości pod terminal */
+/* ==========================================================================
+   STYLE BAZOWE (Wyświetlanie na ekranie - Ciemny Terminal)
+   ========================================================================== */
 body {
-    /* Używamy czcionek o stałej szerokości (monospace) */
     font-family: "Courier New", Courier, monospace;
-    background-color: #0d0e11; /* Bardzo głęboka czerń */
-    color: #cbd5e1;            /* Delikatny, jasnoszary tekst (mniej męczy niż czysta biel) */
+    background-color: #0d0e11; /* Głęboka czerń */
+    color: #cbd5e1;            /* Jasnoszary tekst */
     line-height: 1.6;
     padding: 20px;
     max-width: 700px;
@@ -19,7 +20,7 @@ body {
 }
 
 .prompt {
-    color: #22d3ee; /* Cyjanowy kolor użytkownika */
+    color: #22d3ee; /* Cyjanowy prompt */
     font-weight: bold;
 }
 
@@ -27,7 +28,7 @@ body {
     color: #ffffff;
 }
 
-/* Sekcje */
+/* Sekcje i nagłówki */
 h2 {
     color: #22d3ee;
     font-size: 1.1rem;
@@ -40,7 +41,36 @@ p {
     color: #94a3b8;
 }
 
-/* Tabela w stylu CLI (jak na Twoim zrzucie ekranu) */
+/* Żółty komunikat informacyjny */
+#disclaimer {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px dashed #eab308;
+    color: #facc15;
+    font-size: 0.9rem;
+}
+
+#disclaimer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Nowa klasa dla złączonych w linie danych użytkownika */
+.user-metadata-line {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.cyan-accent {
+    color: #22d3ee;
+}
+
+.gray-text {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Tabela w stylu CLI */
 .cli-table {
     width: 100%;
     border-collapse: collapse;
@@ -48,19 +78,19 @@ p {
 }
 
 .cli-table td {
-    border: 1px solid #1e293b; /* Ciemne, subtelne ramki */
+    border: 1px solid #1e293b;
     padding: 12px;
     vertical-align: top;
     font-size: 0.95rem;
 }
 
 .table-key {
-    color: #22d3ee; /* Lewa kolumna świeci na cyjanowo */
+    color: #22d3ee;
     font-weight: bold;
-    width: 30%;    /* Stała szerokość lewej kolumny */
+    width: 30%;
 }
 
-/* Przycisk jako element interfejsu */
+/* Przycisk procedury RODO */
 button {
     background-color: transparent;
     border: 1px solid #22d3ee;
@@ -73,10 +103,10 @@ button {
 
 button:hover {
     background-color: #22d3ee;
-    color: #0d0e11; /* Odwrócenie kolorów przy najechaniu */
+    color: #0d0e11;
 }
 
-/* Ukrywanie/Pokazywanie */
+/* Klasy pomocnicze do skryptu JS */
 .hidden {
     display: none;
 }
@@ -85,32 +115,49 @@ button:hover {
     display: block;
 }
 
+/* Kontener z tekstem klauzuli RODO */
 .rodo-content {
     margin-top: 15px;
     padding: 12px;
-    border: 1px dashed #ef4444; /* Czerwona ramka dla ważnego komunikatu */
+    border: 1px dashed #ef4444;
     color: #f87171;
-    font-size: 0.85rem;
+    background-color: #141115;
 }
 
-@media print {
-    /* Ukrywamy przycisk, bo na wydruku nie da się w niego kliknąć */
-    #rodo-btn {
-        display: none !important;
-    }
-    
-    /* Wymuszamy, żeby tekst RODO był od razu widoczny */
-    #rodo-text {
-        display: block !important;
-    }
-}
-
-/* Stopka */
+/* Stopka strony */
 footer {
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: center;
     font-size: 0.8rem;
     color: #475569;
     border-top: 1px solid #1e293b;
     padding-top: 15px;
+}
+
+/* ==========================================================================
+   REGUŁY DRUKOWANIA (Standardowy jasny arkusz, bez wymuszania Dark Mode)
+   ========================================================================== */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm 12mm; /* Marginesy dopasowane, aby całość zmieściła się na 1 stronie */
+    }
+
+    /* Ukrywamy przycisk interaktywny na wydruku */
+    #rodo-btn {
+        display: none !important;
+    }
+
+    /* Wymuszamy, aby tekst RODO był zawsze widoczny w wygenerowanym PDF */
+    #rodo-text.hidden {
+        display: block !important;
+    }
+
+    /* Optymalizacja odstępów pod kątem zmieszczenia całości na jednej karcie A4 */
+    .terminal-header { margin-bottom: 15px; }
+    .user-metadata-line { margin-bottom: 15px; }
+    h2 { margin-top: 15px; margin-bottom: 8px; }
+    .cli-table { margin-bottom: 15px; }
+    .cli-table td { padding: 8px; }
+    footer { margin-top: 20px; }
 }
