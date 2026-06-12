@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eteryu@codeberg:~</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="terminal-header">
+        <span class="prompt">eteryu@codeberg:~$</span> <span class="command">cat cv.txt</span>
+    </div>
+
+    <main>
+        <section id="user-info" style="margin-bottom: 25px;">
+            <p>
+                <span style="color: #22d3ee;">USER:</span> Jan Kowalski<br>
+                <span style="color: #22d3ee;">BORN:</span> 15.05.1998 r.<br>
+                <span style="color: #22d3ee;">CITY:</span> Warszawa, Polska
+            </p>
+        </section>
+
+        <section id="about">
+            <h2>[ O mnie ]</h2>
+            <p>Analizuję rzeczy głębiej, niż nakazuje zdrowy rozsądek. Pasjonat mobile hardeningu i prywatności w sieci.</p>
+        </section>
+
+        <section id="details">
+            <h2>[ System Information ]</h2>
+            <table class="cli-table">
+                <tr>
+                    <td class="table-key">Umiejętności</td>
+                    <td>
+                        <strong style="color: #22d3ee;">[ IT / Cybersec ]</strong><br>
+                        • Networking, Mobile Hardening<br>
+                        • Zarządzanie prywatnością, Audyt DNS<br>
+                        <br>
+                        <strong style="color: #22d3ee;">[ Operacje / Logistyka ]</strong><br>
+                        • Kompleksowa obsługa procesów przyjęć, lokacji oraz wydań towaru<br>
+                        • Systemy WMS, praca z kolektorami danych<br>
+                        • Kontrola jakości oraz uprawnienia UDT (wózki widłowe)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-key">Doświadczenie</td>
+                    <td>
+                        <strong>Magazynier // extraDACH Koszalin</strong> (2026 - obecnie)<br>
+                        <br>
+                        <strong>Magazynier // Prokmet Sp. z o.o.</strong> (2024 - 2026)<br>
+                        <br>
+                        <strong>Magazynier // AGC Automotive Poland (d. NordGlass)</strong> (2020 - 2024)<br>
+                        <span style="color: #64748b; font-size: 0.85rem;">• Ponad 4 lata stabilnego zatrudnienia w strukturach logistycznych korporacji.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-key">Wykształcenie</td>
+                    <td>
+                        <strong>Liceum Ogólnokształcące</strong> (2017 - 2021)<br>
+                        Centrum Edukacyjne "Atut Lider Kształcenia"
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-key">Języki</td>
+                    <td>
+                        • Polski (Ojczysty)<br>
+                        • Angielski (B2/C1 – Płynna komunikacja, dokumentacja techniczna)
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="system-status">
+            <h2>[ Status Systemu ]</h2>
+            <button id="rodo-btn">Uruchom procedurę RODO</button>
+            <div id="rodo-text" class="hidden">
+                <p class="rodo-content">
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z RODO).
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>eteryu.codeberg.page // 2026 // Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

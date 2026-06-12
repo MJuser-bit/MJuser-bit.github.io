@@ -1,0 +1,116 @@
+/* Stylizacja całości pod terminal */
+body {
+    /* Używamy czcionek o stałej szerokości (monospace) */
+    font-family: "Courier New", Courier, monospace;
+    background-color: #0d0e11; /* Bardzo głęboka czerń */
+    color: #cbd5e1;            /* Delikatny, jasnoszary tekst (mniej męczy niż czysta biel) */
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Nagłówek terminala */
+.terminal-header {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #22d3ee;
+    padding-bottom: 10px;
+}
+
+.prompt {
+    color: #22d3ee; /* Cyjanowy kolor użytkownika */
+    font-weight: bold;
+}
+
+.command {
+    color: #ffffff;
+}
+
+/* Sekcje */
+h2 {
+    color: #22d3ee;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 0 0 15px 0;
+    color: #94a3b8;
+}
+
+/* Tabela w stylu CLI (jak na Twoim zrzucie ekranu) */
+.cli-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.cli-table td {
+    border: 1px solid #1e293b; /* Ciemne, subtelne ramki */
+    padding: 12px;
+    vertical-align: top;
+    font-size: 0.95rem;
+}
+
+.table-key {
+    color: #22d3ee; /* Lewa kolumna świeci na cyjanowo */
+    font-weight: bold;
+    width: 30%;    /* Stała szerokość lewej kolumny */
+}
+
+/* Przycisk jako element interfejsu */
+button {
+    background-color: transparent;
+    border: 1px solid #22d3ee;
+    color: #22d3ee;
+    padding: 8px 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #22d3ee;
+    color: #0d0e11; /* Odwrócenie kolorów przy najechaniu */
+}
+
+/* Ukrywanie/Pokazywanie */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.rodo-content {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px dashed #ef4444; /* Czerwona ramka dla ważnego komunikatu */
+    color: #f87171;
+    font-size: 0.85rem;
+}
+
+@media print {
+    /* Ukrywamy przycisk, bo na wydruku nie da się w niego kliknąć */
+    #rodo-btn {
+        display: none !important;
+    }
+    
+    /* Wymuszamy, żeby tekst RODO był od razu widoczny */
+    #rodo-text {
+        display: block !important;
+    }
+}
+
+/* Stopka */
+footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #475569;
+    border-top: 1px solid #1e293b;
+    padding-top: 15px;
+}
